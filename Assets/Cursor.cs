@@ -23,6 +23,7 @@ public class Cursor : MonoBehaviour
             {
                 dragging = true;
                 dragStartPos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+                simulator.Reset();
             }
             else return;
         }
@@ -30,7 +31,6 @@ public class Cursor : MonoBehaviour
         {
             dragging = false;
             transform.position = initialPos;
-            simulator.Reset();
             return;
         }
 
